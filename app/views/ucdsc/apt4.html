@@ -1,0 +1,77 @@
+{{<layout}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <div id="content">
+    <div class="inner-block">
+        <div class="phase-banner">
+            <p>
+                <strong class="phase-tag">ALPHA</strong>
+                <span>This is a new service – your feedback will help us to improve it.</span>
+            </p>
+        </div>
+    </div>
+
+<h1 class="heading-medium">Appointment request details</h1>
+{{#data}}
+<form method="post" action="apt5" id="dateAndTime">
+  <div class="form-group">
+    <fieldset>
+      <legend class="form-label-bold">Select room</legend>
+      <select class="form-control">
+        {{#room}}
+					<option value="{{room-id}}">{{name}}</option>
+				{{/room}}
+      </select>
+    </fieldset>
+  </div>
+  <div class="form-group">
+    <label for="date" class="form-label-bold">Date</label>
+    <input id="date" class="form-control" type="date" />
+  </div>
+  <div class="form-group">
+    <fieldset class="inline">
+      <legnend class="form-label-bold">Select time</legend>
+
+      <div class="form-group form-group-compound">
+				{{#times}}
+        <label class="block-label" data-target="example-ni-no" for="radio-indent-{{room-id}}" style="font-size:18px;">
+          <input id="radio-indent-{{room-id}}" type="radio" name="radio-indent-group" value="Yes">
+          {{time}}<br/> for 40 minutes
+        </label>
+				{{/times}}
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+    <fieldset class="inline">
+      <legend class="form-label-bold">Select facilities</legend>
+      <div class="form-group form-group-compound">
+        {{#facilities}}
+				<label class="block-label" data-target="example-ni-no" for="radio-fac-{{facilities-id}}">
+          <input id="radio-fac-{{facilities-id}}" type="checkbox" name="radio-indent-group" value="Yes">
+          {{name}}
+        </label>
+				{{/facilities}}
+      </div>
+    </fieldset>
+  </div>
+    <div class="form-group">
+      <button class="button">
+        Book appointment
+      </button>
+    </div>
+</form>
+{{/data}}
+</div>
+</main>
+
+{{/content}}
+
+{{/layout}}

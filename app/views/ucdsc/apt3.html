@@ -1,0 +1,48 @@
+{{<layout}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <div id="content">
+      <div class="inner-block">
+          <div class="phase-banner">
+              <p>
+                  <strong class="phase-tag">ALPHA</strong>
+                  <span>This is a new service – your feedback will help us to improve it.</span>
+              </p>
+          </div>
+      </div>
+
+  <h1 class="heading-medium">Appointment request details</h1>
+
+  <form method="post" action="apt4" id="office" >
+    <div class="form-group">
+      <fieldset>
+				<legend class="form-label-bold">Select office location</legend>
+				{{#data}}
+					{{#offices}}
+		        <label class="block-label" for="radio--{{office-id}}">
+		          <input id="radio--{{office-id}}" type="radio" name="radio-group" value="Office-{{office-id}}">
+		          {{name}}
+		        </label>
+					{{/offices}}
+				{{/data}}
+      </fieldset>
+    </div>
+      <div class="form-group">
+        <button class="button">
+          Search
+        </button>
+      </div>
+  </form>
+
+  </div>
+</main>
+
+{{/content}}
+
+{{/layout}}
