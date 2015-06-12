@@ -48,7 +48,7 @@ This will install folders containing programs described by the package.json file
 node start.js
 ```
 
-Go to [localhost:3000](http://localhost:3000) in your browser.
+Go to [localhost:3000/ucdsc](http://localhost:3000/ucdsc) in your browser.
 
 #### Hot reload
 
